@@ -27,10 +27,7 @@ def chi2_independence(C):
     matrix = np.outer(row , col)
     matrix = matrix / sum
 
-    ans = 0.0
-    for i in range(0 , len(arr)):
-        for j in range(0 , len(arr[i])):
-            ans += (arr[i][j] - matrix[i][j]) ** 2 /  matrix[i][j]
+    ans = np.sum((arr - matrix) ** 2 / matrix)
 
     result = (ans , matrix)
 
